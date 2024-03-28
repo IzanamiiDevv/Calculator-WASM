@@ -42,6 +42,7 @@ async function instantiate() {
 
 //Middle Ware
 app.use(cors({ origin:"*" }));
+app.use(express.json());
 
 
 //Server Root
@@ -50,16 +51,41 @@ app.get('/',(req,res)=>{
 });
 
 //Addition
-app.post('/add',(req,res)=>{});
+
+app.post('/add',(req,res)=>{
+    instantiate().then(method => {
+        let { a,b } = req.body.data;
+        let result = method.add(a,b);
+        res.send({ result:result });
+    });
+});
 
 //Subtraction
-app.post('/sub',(req,res)=>{});
+app.post('/sub',(req,res)=>{
+    instantiate().then(method => {
+        let { a,b } = req.body.data;
+        let result = method.subtract(a,b);
+        res.send({ result:result });
+    });
+});
 
 //Multiplication
-app.post('/mul',(req,res)=>{});
+app.post('/mul',(req,res)=>{
+    instantiate().then(method => {
+        let { a,b } = req.body.data;
+        let result = method.multiply(a,b);
+        res.send({ result:result });
+    });
+});
 
 //Division
-app.post('/div',(req,res)=>{});
+app.post('/div',(req,res)=>{
+    instantiate().then(method => {
+        let { a,b } = req.body.data;
+        let result = method.devide(a,b);
+        res.send({ result:result });
+    });
+});
 
 //Lunch the Server
 app.listen(PORT,()=>{
