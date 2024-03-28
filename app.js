@@ -51,6 +51,17 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(publicPath,'index.html'));
 });
 
+//Addition
+app.post('/add',(req,res)=>{});
+
+//Subtraction
+app.post('/sub',(req,res)=>{});
+
+//Multiplication
+app.post('/mul',(req,res)=>{});
+
+//Division
+app.post('/div',(req,res)=>{});
 
 //Lunch the Server
 app.listen(PORT,()=>{
