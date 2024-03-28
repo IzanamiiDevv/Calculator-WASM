@@ -41,9 +41,7 @@ async function instantiate() {
 }
 
 //Middle Ware
-app.use(cors({
-    origin:"*"
-}));
+app.use(cors({ origin:"*" }));
 
 
 //Server Root
