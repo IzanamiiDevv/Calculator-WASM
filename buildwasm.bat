@@ -1,1 +1,1 @@
-emcc wasm.cpp -s WASM=1 -o wasm.html
+emcc operation.cpp -s WASM=1 -o operation.html

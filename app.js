@@ -34,7 +34,7 @@ let info = {
 
 
 async function instantiate() {
-    let response = await fetch('operator.wasm');
+    let response = await fetch('http://localhost:5173/wasm/operator.wasm');
     let bytes = await response.arrayBuffer();
     let wasmObj = await WebAssembly.instantiate(bytes, info);
     return new Promise(res => res(wasmObj.instance.exports))
@@ -55,4 +55,7 @@ app.get('/',(req,res)=>{
 //Lunch the Server
 app.listen(PORT,()=>{
     console.log(`server was running at: http://localhost:${PORT}`);
+    instantiate().then(method => {
+        console.log(method.add(5,5));
+    });
 });
