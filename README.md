@@ -9,7 +9,6 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 - Node.js and npm installed on your machine.
-- CMake for building C++ code.
 
 ### Installation
 
@@ -25,17 +24,12 @@ To get a local copy up and running follow these simple steps.
 
 ### Building and Running
 
-1. Build the C++ code to generate WASM file
-   ```sh
-   npm run build:wasm
-   ```
-
-2. Run Express.js server
+1. Run Express.js server
    ```sh
    npm run start:server
    ```
 
-3. Start Vite development server
+2. Start Vite development server
    ```sh
    npm run dev
    ```
